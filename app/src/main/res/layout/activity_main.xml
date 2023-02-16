@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <import type="com.turgutcanozdemir.android.app.geonames.countrysearch.viewmodel.MainActivityViewModel"/>
+        <variable name="viewModel" type="MainActivityViewModel" />
+    </data>
+
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <EditText
+            android:id="@+id/mainActivityCountryEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text"
+            android:hint="@string/edittext_country_hint"
+            android:text="@={viewModel.country.countryCode}" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round"
+            android:onClick="@{() -> viewModel.handleListButtonClicked()}"
+            android:text="@string/button_show_info_text" />
+
+        <ListView
+            android:id="@+id/mainActivityListInfoListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+</layout>

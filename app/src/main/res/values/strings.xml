@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">CountrySearchApp</string>
+
+    <string name="edittext_country_hint">Input country code (e.g. TR, DE)</string>
+    <string name="button_show_info_text">Show Country Information</string>
+    <string name="button_exit_text">Exit</string>
+    <string name="no_country_message">No country for the information</string>
+    <string name="invalid_country_message">Invalid country</string>
+
+    <string name="message_text_main_activity_db_save_question">Do you want to save info to DB?</string>
+    <string name="message_text_main_activity_db_yes_button">Yes</string>
+    <string name="message_text_main_activity_db_no_button">No</string>
+    <string name="message_text_main_activity_db_cancel_button">Cancel</string>
+
+    <string name="textview_country_text">Country: </string>
+    <string name="textview_capital_text">Capital: </string>
+    <string name="textview_continent_text">Continent: </string>
+    <string name="textview_languages_text">Languages: </string>
+    <string name="textview_population_text">Population: </string>
+    <string name="textview_currency_text">Currency: </string>
+    <string name="textview_wiki_link_text">Wikipedia: </string>
+
+    <string name="wiki_base_url">https://en.wikipedia.org/wiki/</string>
+</resources>
