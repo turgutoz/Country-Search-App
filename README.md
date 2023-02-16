@@ -26,6 +26,8 @@ FEATURES:
 
 - Designed by adhering to layered architecture (repository, api, service, application)
 
+- Dependency Injection (Hilt)
+
 - When the ‘Show Country Information’ button is pressed for the first time, the app asks if you want to save the country information to the database. If your answer is ‘Yes’ and it is not saved before, it saves it to the local database. When the next time button is pressed, it pulls the recorded data from the database. Thus, if there is any usage quota or cost in using the API, this method provides protection from the cost.
 
 WEAKNESS:
