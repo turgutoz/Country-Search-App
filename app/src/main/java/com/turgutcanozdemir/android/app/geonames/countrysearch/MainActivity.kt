@@ -7,15 +7,13 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import com.karandev.util.retrofit.RetrofitUtil
 import com.karandev.util.retrofit.putQueue
 import com.turgutcanozdemir.android.app.geonames.countrysearch.databinding.ActivityMainBinding
 import com.turgutcanozdemir.android.app.geonames.countrysearch.keys.COUNTRY
 import com.turgutcanozdemir.android.app.geonames.countrysearch.keys.COUNTRYDTO
 import com.turgutcanozdemir.android.app.geonames.countrysearch.viewmodel.MainActivityViewModel
 import com.turgutcanozdemir.android.library.geonames.country.data.service.CountryAppService
-import com.turgutcanozdemir.android.library.geonames.country.dto.CountryDTO
-import com.turgutcanozdemir.android.library.geonames.countrysearch.retrofit.api.GEONAMES_BASE_URL
+import com.turgutcanozdemir.android.library.geonames.country.data.service.dto.CountryDTO
 import com.turgutcanozdemir.android.library.geonames.countrysearch.retrofit.api.ICountrySearch
 import com.turgutcanozdemir.android.library.geonames.countrysearch.retrofit.data.entity.Countries
 import com.turgutcanozdemir.android.library.geonames.countrysearch.retrofit.data.entity.Country

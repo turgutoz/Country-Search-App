@@ -21,7 +21,6 @@ dependencyResolutionManagement {
 }
 rootProject.name = "CountrySearchApp"
 include ':app'
-include ':commonlib'
 include ':geonameslib'
 include ':repositorylib'
 include ':servicelib'

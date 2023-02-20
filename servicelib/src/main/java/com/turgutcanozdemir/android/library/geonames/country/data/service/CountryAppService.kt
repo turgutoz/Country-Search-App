@@ -3,11 +3,10 @@ package com.turgutcanozdemir.android.library.geonames.country.data.service
 import com.karandev.util.data.repository.exception.RepositoryException
 import com.karandev.util.data.service.DataServiceException
 import com.turgutcanozdemir.android.library.geonames.country.data.dal.CountryAppHelper
-import com.turgutcanozdemir.android.library.geonames.country.data.entity.Country
 import com.turgutcanozdemir.android.library.geonames.country.data.entity.CountryInfo
 import com.turgutcanozdemir.android.library.geonames.country.data.service.mapper.ICountryMapper
-import com.turgutcanozdemir.android.library.geonames.country.dto.CountryDTO
-import com.turgutcanozdemir.android.library.geonames.country.dto.CountrySaveDTO
+import com.turgutcanozdemir.android.library.geonames.country.data.service.dto.CountryDTO
+import com.turgutcanozdemir.android.library.geonames.country.data.service.dto.CountrySaveDTO
 import javax.inject.Inject
 
 class CountryAppService @Inject constructor() {

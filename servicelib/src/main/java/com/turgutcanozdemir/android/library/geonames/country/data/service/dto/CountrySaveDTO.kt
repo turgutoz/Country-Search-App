@@ -1,4 +1,4 @@
-package com.turgutcanozdemir.android.library.geonames.country.dto
+package com.turgutcanozdemir.android.library.geonames.country.data.service.dto
 
 class CountrySaveDTO {
     var id = 0L

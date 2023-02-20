@@ -6,7 +6,7 @@ import androidx.databinding.DataBindingUtil
 import com.turgutcanozdemir.android.app.geonames.countrysearch.databinding.ActivityCountryDetailsDatabaseBinding
 import com.turgutcanozdemir.android.app.geonames.countrysearch.keys.COUNTRYDTO
 import com.turgutcanozdemir.android.app.geonames.countrysearch.viewmodel.CountryDetailsDatabaseActivityViewModel
-import com.turgutcanozdemir.android.library.geonames.country.dto.CountryDTO
+import com.turgutcanozdemir.android.library.geonames.country.data.service.dto.CountryDTO
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
