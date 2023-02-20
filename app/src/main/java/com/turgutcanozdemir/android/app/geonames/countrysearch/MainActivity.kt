@@ -28,6 +28,8 @@ import javax.inject.Inject
 class MainActivity : AppCompatActivity() {
     private lateinit var mBinding: ActivityMainBinding
     private lateinit var mCountries: List<Country>
+
+    @Inject
     lateinit var countrySearch: ICountrySearch
 
     @Inject
@@ -142,13 +144,8 @@ class MainActivity : AppCompatActivity() {
         if(list.isNotEmpty())
             initCountryListViewMutableList(list)
         else {
-            countrySearch = RetrofitUtil.createRetrofitWithLogging(GEONAMES_BASE_URL)
-                .create(ICountrySearch::class.java)
-
-
             val call = countrySearch.findCountry("turgutoz", country, "true")
             call.putQueue({_, r -> responseCallback(r) }) { c, ex -> failCallback(c, ex) }
-
         }
     }
 }
