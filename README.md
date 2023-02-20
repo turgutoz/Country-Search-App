@@ -1,10 +1,8 @@
 App Name: Country Search App
 
 Author: Turgut Can Ozdemir
-
 E-mail: turgutcanozdemir@gmail.com
-
-Date: 02/2023
+Release Date: 02/2023
 
 If you have any questions or suggestions, please contact.
 
