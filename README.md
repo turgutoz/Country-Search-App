@@ -30,6 +30,8 @@ FEATURES:
 
 - When the 'Show Country Information' button is pressed for the first time, the app asks if you want to save the country information to the database. If your answer is 'Yes' and it has not been saved before, it saves it to the local database. When the button is pressed again, it pulls the recorded data from the database. This method provides protection from the cost if there is any usage quota or cost in using the API.
 
+- After the data received from the service provider is saved in the local database, you can use a database management tool that supports SQLite (such as DBeaver) to access and read the saved data in the database.
+
 WEAKNESSES:
 
 - Performance could be improved by providing a solution with one DetailsActivity instead of two DetailsActivities. Due to the instantiation of the Country List given to the ListView, two separate activities were created. This approach can be changed and improved.
