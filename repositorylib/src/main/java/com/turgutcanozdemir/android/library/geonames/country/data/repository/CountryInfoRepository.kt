@@ -9,7 +9,11 @@ import java.util.*
 import javax.inject.Inject
 
 private const val COUNTRY_CODE = "country_code"
+private const val QUERY_COUNT = "query_count"
 private const val QUERY_DATE_TIME = "query_date_time"
+private const val SAVE_DATE_TIME = "save_date_time"
+private const val SOURCE_SERVICE = "source_service"
+
 private const val TABLE_NAME = "country_info"
 
 class CountryInfoRepository @Inject constructor() : ICountryInfoRepository {
@@ -19,9 +23,13 @@ class CountryInfoRepository @Inject constructor() : ICountryInfoRepository {
     private fun createCountryInfo(cursor: Cursor): CountryInfo
     {
         val countryCode = cursor.getString(0)
-        val queryDateTime = cursor.getLong(1)
+        val queryCount = cursor.getLong(1)
+        val queryDateTime = cursor.getLong(2)
+        val saveDateTime = cursor.getLong(3)
+        val sourceService = cursor.getString(4)
 
-        return CountryInfo(countryCode, DateTimeConvertUtil.toLocalDateTime(queryDateTime))
+        return CountryInfo(countryCode, queryCount, DateTimeConvertUtil.toLocalDateTime(queryDateTime),
+            DateTimeConvertUtil.toLocalDateTime(saveDateTime), sourceService)
     }
 
     override fun count(): Long {
@@ -31,18 +39,13 @@ class CountryInfoRepository @Inject constructor() : ICountryInfoRepository {
         }
     }
 
-    // yazılamadı
-    override fun existsById(id: Int?): Boolean {
-        TODO("Not yet implemented")
-    }
-
     override fun findByCountry(country: String): CountryInfo? {
-        val projection = arrayOf(COUNTRY_CODE, QUERY_DATE_TIME)
+        val projection = arrayOf(COUNTRY_CODE, QUERY_COUNT, QUERY_DATE_TIME, SAVE_DATE_TIME, SOURCE_SERVICE)
         var cursor: Cursor? = null
         var countryInfo : CountryInfo? = null
 
         try {
-            cursor = db.query(TABLE_NAME, projection, null, null, null, null, null)
+            cursor = db.query(TABLE_NAME, projection, "country = $country", null, null, null, null)
             if (cursor != null && cursor.moveToFirst())
                 countryInfo = createCountryInfo(cursor)
         }
@@ -57,8 +60,11 @@ class CountryInfoRepository @Inject constructor() : ICountryInfoRepository {
     {
         val cv = ContentValues()
 
-        cv.put(COUNTRY_CODE, countryInfo?.countryCode)
-        cv.put(QUERY_DATE_TIME, DateTimeConvertUtil.toMilliseconds(countryInfo?.queryDateTime))
+        cv.put(COUNTRY_CODE, countryInfo.countryCode)
+        cv.put(QUERY_COUNT, 1)
+        cv.put(QUERY_DATE_TIME, DateTimeConvertUtil.toMilliseconds(countryInfo.queryDateTime))
+        cv.put(SAVE_DATE_TIME, DateTimeConvertUtil.toMilliseconds(countryInfo.saveDateTime))
+        cv.put(SOURCE_SERVICE, countryInfo.sourceService)
 
         db.insertOrThrow(TABLE_NAME, null, cv)
 
@@ -82,6 +88,10 @@ class CountryInfoRepository @Inject constructor() : ICountryInfoRepository {
     }
 
     override fun deleteById(id: Int?) {
+        TODO("Not yet implemented")
+    }
+
+    override fun existsById(id: Int?): Boolean {
         TODO("Not yet implemented")
     }
 

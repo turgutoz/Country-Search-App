@@ -14,7 +14,10 @@ private const val DATABASE_VERSION = 1
 private const val CREATE_COUNTRY_INFO = """
     CREATE TABLE country_info (
         country_code TEXT,
+        query_count INTEGER default(1) not null,
         query_date_time INTEGER not null,
+        save_date_time INTEGER not null,
+        source_service TEXT not null,
         CONSTRAINT country_info_PK PRIMARY KEY(country_code)
     );
 """
