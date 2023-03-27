@@ -1,4 +1,4 @@
-App Name: Country Search App
+COUNTRY SEARCH APP
 
 Author: Turgut Can Ozdemir
 
